@@ -124,4 +124,42 @@ class Task
     {
         $this->isDone = $flag;
     }
+
+    /**
+     * @return bool|null
+     */
+    public function getIsDone(): ?bool
+    {
+        return $this->isDone;
+    }
+
+    /**
+     * @param bool $isDone
+     * @return $this
+     */
+    public function setIsDone(bool $isDone): self
+    {
+        $this->isDone = $isDone;
+
+        return $this;
+    }
+
+    /**
+     * @return user|null
+     */
+    public function getAuthor(): ?user
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param user|null $author
+     * @return $this
+     */
+    public function setAuthor(?user $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
 }
