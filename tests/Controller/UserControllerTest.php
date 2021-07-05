@@ -3,9 +3,9 @@
 
 namespace App\Tests\Controller;
 
-use PHPUnit\Framework\TestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class UserControllerTest extends TestCase
+class UserControllerTest extends WebTestCase
 {
 
 }
