@@ -46,6 +46,9 @@ class User implements UserInterface
      */
     private $tasks;
 
+    /**
+     * User constructor.
+     */
     public function __construct()
     {
         $this->tasks = new ArrayCollection();
@@ -128,6 +131,17 @@ class User implements UserInterface
     }
 
     /**
+     * @param array $roles
+     * @return $this
+     */
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
      *
      */
     public function eraseCredentials()
@@ -142,6 +156,10 @@ class User implements UserInterface
         return $this->tasks;
     }
 
+    /**
+     * @param Task $task
+     * @return $this
+     */
     public function addTask(Task $task): self
     {
         if (!$this->tasks->contains($task)) {
@@ -152,6 +170,10 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @param Task $task
+     * @return $this
+     */
     public function removeTask(Task $task): self
     {
         if ($this->tasks->contains($task)) {
