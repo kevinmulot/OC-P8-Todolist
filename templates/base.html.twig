@@ -39,15 +39,16 @@
     <div class="row col-12 m-auto">
         <div class="row">
             {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
-            <a href="{{ path('user_create') }}" role="button" class="btn btn-primary  col-md-4 m-2">Créer un
-                utilisateur</a>
+                <a href="{{ path('user_list') }}" class="btn btn-warning col-md-3 m-2">Liste utilisateurs</a>
+                <a href="{{ path('user_create') }}" role="button" class="btn btn-primary  col-md-4 m-2">Créer un
+                    utilisateur</a>
             {% endif %}
             {% if app.user %}
-                <a href="{{ path('logout') }}" class="btn btn-danger col-md-4 col-sm-4 m-2">Se déconnecter</a>
+                <a href="{{ path('logout') }}" class="btn btn-danger col-md-3 col-sm-4 m-2">Se déconnecter</a>
             {% endif %}
 
             {% if not app.user and 'login' != app.request.attributes.get('_route') %}
-                <a href="{{ path('login') }}" class="btn btn-success col-md-4  m-2">Se connecter</a>
+                <a href="{{ path('login') }}" class="btn btn-success col-md-3  m-2">Se connecter</a>
             {% endif %}
         </div>
     </div>
