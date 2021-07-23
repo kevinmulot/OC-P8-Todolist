@@ -17,7 +17,7 @@ class TaskControllerTest extends WebTestCase
     {
         $crawler = $this->client->request('GET', '/login');
         $form = $crawler->selectButton('Se connecter')->form();
-        $this->client->submit($form, ['_username' => 'admin', '_password' => 'adminpass']);
+        $this->client->submit($form, ['_username' => 'admin', '_password' => 'admin']);
     }
 
     public function testListAction()
@@ -42,8 +42,8 @@ class TaskControllerTest extends WebTestCase
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
         $form = $crawler->selectButton('Ajouter')->form();
-        $form['task[title]'] = 'title';
-        $form['task[content]'] = 'content';
+        $form['task[title]'] = 'new title';
+        $form['task[content]'] = 'new content';
         $this->client->submit($form);
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
@@ -57,13 +57,12 @@ class TaskControllerTest extends WebTestCase
     public function testModifyAction()
     {
         $this->loginUser();
-
         $crawler = $this->client->request('GET', '/tasks/4/edit');
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
         $form = $crawler->selectButton('Modifier')->form();
-        $form['task[title]'] = 'title';
-        $form['task[content]'] = 'content';
+        $form['task[title]'] = 'modified title';
+        $form['task[content]'] = 'modified content';
         $this->client->submit($form);
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
@@ -77,8 +76,7 @@ class TaskControllerTest extends WebTestCase
     public function testToggleTaskAction(): void
     {
         $this->loginUser();
-
-        $this->client->request('GET', '/tasks/4/toggle');
+        $this->client->request('GET', '/tasks/5/toggle');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
 
@@ -92,8 +90,7 @@ class TaskControllerTest extends WebTestCase
     public function testDeleteAction()
     {
         $this->loginUser();
-
-        $this->client->request('GET', '/tasks/4/delete');
+        $this->client->request('GET', '/tasks/10/delete');
 
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
 
