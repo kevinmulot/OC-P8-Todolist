@@ -4,20 +4,23 @@ Please first read the readme.md file at the root of the project.
 Then follow the contribution steps of this project.
 
 ## Report bugs or propose a new feature
+
 You can report a bug or request the addition of a feature to the application by creating a pull request.
 
 To do so, please respect these few rules:
+
 * Give a title as clear and short as possible.
 * Describe the problem clearly. In the case of a bug, give as many details as possible about your environment (OS, PHP version, extensions ...) and describe the steps to reproduce the bug.
 * Use the bug or feature label for your problem
 
-## The instructions ##
+## The instructions
 
 ### Step 1: Fork the repository
 
 ### Step 2: Clone your fork
 
 ### Step 3: Install the project
+
 Install the project by following the instructions in the readme.md file at the root of the project.
 
 ### Step 4: How to work on the project
@@ -35,10 +38,10 @@ Install the project by following the instructions in the readme.md file at the r
 5. Commit your code
    `git commit -am 'an explicit commit description'`
 
-5. Push your branch
+6. Push your branch
    `git push origin your-branch-name`
 
-### Step 5. Create a merge request.
+### Step 5. Create a merge request
 
 Access your fork on your Github account to open a merge request. Provide a clear title and concise explanation of your work in the description of your merge request. Add a problem reference.
 
@@ -49,12 +52,14 @@ Github will automatically run tests and the code will be checked with Codacy. Yo
 If your pull request conforms to the project's contribution recommendations, your feature or fix will be integrated into the application.
 
 ## Standards to be respected
-- [PHP Standards Recommendations (PSR)] [7]
-- [PSR-1][8]
-- [PSR-12] [9]
-- [PSR-4] [10]
-- [Symfony Coding Standards] [11]
 
-## The Best Practices ##
-- [Symfony Best Practices] [12]
-- [Doctrine Best Practices] [21]
+* PHP Standards Recommendations (PSR)
+* PSR-1
+* PSR-12
+* PSR-4
+* Symfony Coding Standards
+
+## The Best Practices
+
+* Symfony Best Practices
+* Doctrine Best Practices
