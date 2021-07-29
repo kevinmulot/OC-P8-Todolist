@@ -59,8 +59,6 @@ class AppFixtures extends Fixture
 
             if ($i <= 7) {
                 $task->setAuthor($user);
-            } else {
-                $task->setAuthor(null);
             }
 
             $manager->persist($task);

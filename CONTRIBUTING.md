@@ -11,7 +11,7 @@ To do so, please respect these few rules:
 
 * Give a title as clear and short as possible.
 * Describe the problem clearly. In the case of a bug, give as many details as possible about your environment (OS, PHP version, extensions ...) and describe the steps to reproduce the bug.
-* Use the bug or feature label for your problem
+* Use the bug or feature label for your problem.
 
 ## The instructions
 
@@ -32,13 +32,13 @@ Install the project by following the instructions in the readme.md file at the r
 3. Testing and test covers.
    The application is covered by unit and functional tests. You can find the coverage report in the coverage/index.html folder at the root. Implement your own tests and test your code.
 
-4. Check the quality of your code
+4. Code quality.
    Before committing your code, check the quality of your code.
 
-5. Commit your code
+5. Commit your code.
    `git commit -am 'an explicit commit description'`
 
-6. Push your branch
+6. Push your branch.
    `git push origin your-branch-name`
 
 ### Step 5. Create a merge request
