@@ -52,5 +52,4 @@ class TaskTest extends WebTestCase
         $this->task->setAuthor(new User());
         $this->assertInstanceOf(User::class, $this->task->getAuthor());
     }
-
 }
