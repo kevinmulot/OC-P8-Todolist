@@ -90,7 +90,7 @@ class TaskController extends AbstractController
      */
     public function deleteTaskAction(Task $task)
     {
-        $this->denyAccessUnlessGranted('delete', $task, $message = "Vous ne disposez pas des droits nécessaires pour effacer cette tâche !");
+        $this->denyAccessUnlessGranted('delete', $task, "Vous ne disposez pas des droits nécessaires pour effacer cette tâche !");
          {
             $em = $this->getDoctrine()->getManager();
             $em->remove($task);
