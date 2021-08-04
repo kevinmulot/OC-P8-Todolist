@@ -27,6 +27,13 @@ class SecurityControllerTest extends WebTestCase
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
     }
 
+    public function testLoginCheck()
+    {
+        $this->loginUser();
+        $this->client->request('GET', '/login_check'); // Request the route
+        $this->assertSame(500, $this->client->getResponse()->getStatusCode());
+    }
+
     public function testLoginWithBadCredentials()
     {
         $crawler = $this->client->request('GET', '/login');
@@ -42,7 +49,7 @@ class SecurityControllerTest extends WebTestCase
         static::assertSelectorTextSame('div.alert', "Invalid credentials.");
     }
 
-    public function testLogOut()
+    public function testLogoutCheck()
     {
         $this->loginUser();
         $crawler = $this->client->request('GET', '/');
