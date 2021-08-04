@@ -46,7 +46,7 @@ class AppFixtures extends Fixture
 
             $user = new User();
             $user->setUsername('user' . $i);
-            $user->setEmail('user' . $i .'@todolist.fr');
+            $user->setEmail('user' . $i . '@todolist.fr');
             $user->setPassword($this->encoder->encodePassword($user, 'user' . $i));
             $user->setRoles(['ROLE_USER']);
 
@@ -59,10 +59,6 @@ class AppFixtures extends Fixture
 
             if ($i <= 7) {
                 $task->setAuthor($user);
-            }
-
-            else {
-                $task->setAuthor(null);
             }
 
             $manager->persist($task);
