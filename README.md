@@ -54,6 +54,12 @@ Build the database structure using the following command:
 php bin/console doctrine:migrations:migrate
 ```
 
+Load the data fixtures
+
+```shell
+php bin/console doctrine:fixtures:load
+```
+
 ### Run the application
 
 Launch the Apache/Php runtime environment by using :
@@ -61,6 +67,16 @@ Launch the Apache/Php runtime environment by using :
 ```shell
 php bin/console server:run
 ```
+
+### Default Admin credentials
+
+Default username ```admin```\
+Default password for the Admin is ```admin```
+
+### Default User credentials
+
+Default username ```user#```\
+Default password for the user is ```user#```
 
 ## Support
 
