@@ -10,6 +10,8 @@
 
     <title>To Do List app</title>
 
+    <script src="https://kit.fontawesome.com/f3938e226e.js" crossorigin="anonymous"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -36,21 +38,19 @@
 
 <!-- Page Content -->
 <div class="container">
-    <div class="row col-12 m-auto">
-        <div class="row">
-            {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
-                <a href="{{ path('user_list') }}" class="btn btn-warning col-md-3 m-2">Liste utilisateurs</a>
-                <a href="{{ path('user_create') }}" role="button" class="btn btn-primary  col-md-4 m-2">Créer un
-                    utilisateur</a>
-            {% endif %}
-            {% if app.user %}
-                <a href="{{ path('logout') }}" class="btn btn-danger col-md-3 col-sm-4 m-2">Se déconnecter</a>
-            {% endif %}
+    <div class="row justify-content-between">
+        {% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+            <a href="{{ path('user_list') }}" class="btn btn-warning col-md-3 m-2">Liste des utilisateurs</a>
+            <a href="{{ path('user_create') }}" role="button" class="btn btn-primary  col-md-4 m-2">Créer un
+                utilisateur</a>
+        {% endif %}
+        {% if app.user %}
+            <a href="{{ path('logout') }}" class="btn btn-danger col-md-3 col-sm-4 m-2">Se déconnecter</a>
+        {% endif %}
 
-            {% if not app.user and 'login' != app.request.attributes.get('_route') %}
-                <a href="{{ path('login') }}" class="btn btn-success col-md-3  m-2">Se connecter</a>
-            {% endif %}
-        </div>
+        {% if not app.user and 'login' != app.request.attributes.get('_route') %}
+            <a href="{{ path('login') }}" class="btn btn-success col-md-3  m-2">Se connecter</a>
+        {% endif %}
     </div>
 
     <div class="row">
@@ -75,11 +75,11 @@
 
     <br/>
 
-    <div class="row">
-        <div class="col-md-12">
+
+
             {% block body %}{% endblock %}
-        </div>
-    </div>
+
+
 </div>
 <!-- /.container -->
 
@@ -95,8 +95,8 @@
     </footer>
 
 </div>
-
-<script src="{{ asset('/js/jquery.js') }}"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 </body>
 </html>

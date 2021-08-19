@@ -5,10 +5,9 @@
 {% endblock %}
 
 {% block body %}
-
-    <div class="row">
-        <a href="{{ path('task_create') }}" class="btn btn-success">Créer une nouvelle tâche</a>
-        <a href="{{ path('task_list') }}" class="btn btn-info">Consulter la liste des tâches à faire</a>
-        <a href="{{ path('task_completed') }}" class="btn btn-warning">Consulter la liste des tâches terminées</a>
+    <div class="row justify-content-between">
+        <a href="{{ path('task_create') }}" class="btn btn-success col-md-3  m-2">Nouvelle tâche</a>
+        <a href="{{ path('task_list') }}" class="btn btn-info col-md-3  m-2">Tâches à faire</a>
+        <a href="{{ path('task_completed') }}" class="btn btn-warning col-md-3  m-2">Tâches terminées</a>
     </div>
 {% endblock %}
